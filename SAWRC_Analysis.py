@@ -76,8 +76,9 @@ class Construction_Data_Analyzer:
         self.vomm_net = np.trapz(np.abs(self.hi - self.hf), self.x) 
 
         # parameters for plotting
-        y_range = np.array([min(np.amin(self.hi), np.amin(self.hg)), max(np.amax(self.hi), np.amax(self.hg))])
-        self.ylim_for_plot = (y_range[1] - y_range[0]) * 0.1 * np.array([-1, 1]) + y_range
+        self.y_range = np.array([min(np.amin(self.hi), np.amin(self.hg)), max(np.amax(self.hi), np.amax(self.hg))])
+        self.x_range = np.array([self.x[0], self.x[-1]])
+        self.ylim_for_plot = (self.y_range[1] - self.y_range[0]) * 0.1 * np.array([-1, 1]) + self.y_range
 
         # tool
         self.world_tool = World(width=np.amax(self.x)*2)
@@ -208,7 +209,8 @@ class Construction_Data_Analyzer:
         Plot the construction state at given time
         """
         if subplots == None: 
-            fig, ax = plt.subplots(dpi=150)
+            figsize = np.array([np.ptp(self.x_range), np.ptp(self.y_range)]) * np.array([18, 3]) / np.array([10000, 100])
+            fig, ax = plt.subplots(dpi=150, figsize=figsize)
         else: 
             fig, ax = subplots 
         # initial, goal and current structures
