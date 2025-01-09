@@ -6,11 +6,13 @@ Created on Fri Sep  6 13:01:16 2024
 """
 import numpy as np
 from matplotlib import pyplot as plt
+import sys 
+sys.path.insert(0, './scripts')
 
-from SAWRC_World import gauss, xc 
+from SAWRC_World import gauss, xc
 import Utility 
-from SAWRC_Planning import Wasserstein_Multi_Robot_Planner, Flatten_Wasserstein_Planner 
-from SAWRC_Distributed_Planning import Wasserstein_Multi_Robot_Distributed_Planner_Ver1 
+from SAWRC_Planning import Flatten_Wasserstein_Planner#, Wasserstein_Multi_Robot_Planner
+from SAWRC_Distributed_Planning import Wasserstein_Multi_Robot_Distributed_Planner_Ver1
 from SAWRC_Analysis import Construction_Data_Analyzer#, Multi_Task_Construction_Data_Analyzer
 
 
@@ -64,7 +66,7 @@ if run:
     
     
 # In[Flatten_Wasserstein_Planner]
-run = 0
+run = 1
 if run: 
     timeout = 10000
     planner = Flatten_Wasserstein_Planner(xc, h0, h1, num_robot=10, steepness_desired=np.array([-0.3, 0.3]), dW2=1, 
@@ -76,15 +78,16 @@ if run:
     analyzer = Construction_Data_Analyzer(cd)
     fig, ax = analyzer.plot_construction(len(analyzer.h_list)-1, show_reachable_area=False, show_traversable_area=False, show_untraversable_area=True)
     fig.set_size_inches([9, 3])
-    # analyzer.make_video_from_construction_data(frame_sampling_period=10,
-    #                                            show_reachable_area=False,
-    #                                            show_traversable_area=True,
-    #                                            show_untraversable_area=True,
-    #                                            )
+    analyzer.make_video_from_construction_data(frame_sampling_period=100,
+                                               show_reachable_area=False,
+                                               show_traversable_area=True,
+                                               show_untraversable_area=True,
+                                               video_format='gif',
+                                               )
     
     
 # In[Wasserstein_Multi_Robot_Distributed_Planner_Ver1] 
-run = 1
+run = 0
 if run: 
     timeout = 10000
     planner = Wasserstein_Multi_Robot_Distributed_Planner_Ver1(xc, h0, h1, num_robot=5, dW2=1/4, 
