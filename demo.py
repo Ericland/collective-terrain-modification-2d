@@ -7,7 +7,7 @@ Created on Fri Sep  6 13:01:16 2024
 import numpy as np
 from matplotlib import pyplot as plt
 import sys 
-sys.path.insert(0, './scripts')
+sys.path.insert(0, 'src')
 
 from SAWRC_World import gauss, xc
 import Utility 
