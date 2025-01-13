@@ -28,7 +28,7 @@ print('w2 distance:', Utility.compute_Wp_distance_of_structures(2, h0, h1, xc))
     
     
 # In[centralized planner]
-run = 1
+run = 0
 if run: 
     timeout = 10000
     planner = Flatten_Wasserstein_Planner(
@@ -48,9 +48,9 @@ if run:
     
     
 # In[distributed coordination]
-run = 0
+run = 1
 if run: 
-    timeout = 10000
+    timeout = 50000
     planner = Wasserstein_Multi_Robot_Distributed_Planner_Ver1(
         xc, h0, h1, num_robot=5, dW2=1/4,
         log_actions=False, log_progress=False, log_construction_state=True,
