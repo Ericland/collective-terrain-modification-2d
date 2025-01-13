@@ -16,7 +16,7 @@ from SAWRC_Distributed_Planning import Wasserstein_Multi_Robot_Distributed_Plann
 from SAWRC_Analysis import Construction_Data_Analyzer#, Multi_Task_Construction_Data_Analyzer
 
 
-# In[define tasks]
+# In[generate random tasks]
 rsg = Random_Structure_Generator()
 hp_list = rsg.get_h_pairs(1)
 h0, h1 = hp_list[0]
