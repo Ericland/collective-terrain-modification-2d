@@ -6,6 +6,3 @@
     <br>
     Cornell University 
   </p>
-</p>
-
-<div id="top" align="center">
