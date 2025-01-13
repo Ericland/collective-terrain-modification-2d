@@ -17,15 +17,15 @@
 - [License](#-license)
 - [Acknowledgements](#-acknowledgements)
 
-## 🏠 About
+## About
 
 TBD
 
-## 🔥 News
+## News
 
 TBD
 
-## 📚 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -39,12 +39,12 @@ TBD
 
 TBD 
 
-## 📝 Roadmap
+## Roadmap
 
 - \[x\] TBD
 - \[ \] TBD
 
-## 🔗 Citation
+## Citation
 
 If you find our work helpful, please cite:
 
@@ -61,10 +61,10 @@ If you find our work helpful, please cite:
 
 </details>
 
-## 📄 License
+## License
 
 [MIT licensed](LICENSE).
 
-## 👏 Acknowledgements
+## Acknowledgements
 
 - TBD
