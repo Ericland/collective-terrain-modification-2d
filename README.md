@@ -15,13 +15,13 @@
 
   ## Contents
 
-- [About](#-about) 
-- [News](#-news)
-- [Getting Started](#-getting-started)
-- [Roadmap](#-roadmap)
-- [Citation](#-citation)
-- [License](#-license)
-- [Acknowledgements](#-acknowledgements)
+- [About](#about) 
+- [News](#news)
+- [Getting Started](#getting-started)
+- [Roadmap](#roadmap)
+- [Citation](#citation)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 ## About
 
@@ -64,8 +64,6 @@ If you find our work helpful, please cite:
 	year = {2024},
 }
 ```
-
-</details>
 
 ## License
 
