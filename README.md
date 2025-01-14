@@ -13,7 +13,7 @@
 
 </div>
 
-  ## Contents
+## Contents
 
 - [About](#about) 
 - [News](#news)
