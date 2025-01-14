@@ -1,12 +1,12 @@
-<p style="text-align:center;">
-<h1 style="text-align:center;"><strong>Collective Robotic Terrain Modification</strong></h1>
-  <p style="text-align:center;">
+<p align="center">
+<h1 align="center"><strong>Collective Robotic Terrain Modification</strong></h1>
+  <p align="center">
     Collective Embodied Intelligence Lab
     <br>
     Cornell University 
   </p>
 
-<div id="top" style="text-align:center;">
+<div align="center">
 	
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/Ericland/collective-terrain-modification-2d)
 [![](https://img.shields.io/badge/DARS2024-%F0%9F%93%96-blue)](https://Ericland.github.io/files/papers/2024_DARS.pdf)
