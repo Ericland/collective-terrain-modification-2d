@@ -444,7 +444,7 @@ def compute_Wp_distance(p, p1, p2, x):
     F2 = np.cumsum(p2)
     QF1 = lambda q: np.interp(q, F1, x) 
     QF2 = lambda q: np.interp(q, F2, x) 
-    qs = np.arange(1001)/1000
+    qs = np.arange(101)/100
     Finv1 = QF1(qs) 
     Finv2 = QF2(qs) 
     Fint = np.abs(Finv1-Finv2)**p 
