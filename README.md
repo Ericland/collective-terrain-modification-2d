@@ -99,22 +99,6 @@ python demo_random_task.py
 ```
 
 Modify parameters within each demo script to change terrain size, number of agents, or target configuration.  
-To build your own experiment, use modules in `src/`:
-
-```python
-from src.terrain import Terrain
-from src.agent import Agent
-from src.strategy import DistributedPlanner
-
-terrain = Terrain(initial_map)
-agents = [Agent(...) for _ in range(N)]
-planner = DistributedPlanner(...)
-
-for t in range(T):
-    actions = planner.decide(terrain, agents)
-    terrain.apply(actions)
-    terrain.render()
-```
 
 ---
 
@@ -166,4 +150,4 @@ This project is released under the MIT License. See the [LICENSE](LICENSE) file 
 ## 🙏 Acknowledgements
 
 This project is developed at the **Collective Embodied Intelligence Lab, Cornell University**.  
-We thank our collaborators and funding sources for
+We thank our collaborators and funding sources
