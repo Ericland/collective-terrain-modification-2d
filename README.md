@@ -78,8 +78,12 @@ This project enables:
 ## ⚙️ Requirements
 
 - Python 3.8+  
-- `numpy`, `matplotlib`  
-- (Optional) `scipy`, `tqdm`, or other helper libraries depending on experiment scripts  
+- matplotlib==3.7.2
+- numpy==1.25.2
+- opencv_python==4.8.0.76
+- Pillow==11.3.0
+- scipy==1.11.2
+- tqdm==4.65.0
 
 To install dependencies:  
 ```bash
