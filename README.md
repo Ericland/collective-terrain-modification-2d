@@ -13,46 +13,127 @@
 
 </div>
 
-## Contents
+This repository contains the official 2D implementation accompanying our research on **collective terrain modification**.  
+The work investigates how swarms of simple earthmoving agents can collectively reshape terrain from an **initial configuration** to a **target configuration** using distributed, local rules.
 
-- [About](#about) 
-- [News](#news)
-- [Getting Started](#getting-started)
-- [Roadmap](#roadmap)
-- [Citation](#citation)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+---
 
-## About
+## 📑 Table of Contents
 
-TBD
+- [Research Context](#-research-context)
+- [Contributions](#-contributions)
+- [Repository Structure](#-repository-structure)
+- [Requirements](#-requirements)
+- [Running Experiments](#️-running-experiments)
+- [Evaluation](#-evaluation)
+- [Citation](#-citation)
+- [Roadmap](#-roadmap)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
-## News
+---
 
-TBD
+## 📖 Research Context
 
-## Getting Started
+Collective construction and terrain modification are fundamental problems in swarm robotics and embodied intelligence.  
+Our research explores:
 
-### Prerequisites
+- How large groups of simple robots can collaborate to perform complex modifications of 2D terrains.
+- The tradeoffs between **centralized**, **single-robot**, and **distributed multi-robot** planning approaches.
+- Scalable, fault-tolerant algorithms that leverage **local interactions** for global terrain transformations.
 
-TBD
+This repository provides the simulation environment, algorithms, and demonstration scripts used to validate our approach.
 
-### Installation
+---
 
-TBD
+## 🧪 Contributions
 
-### Demo
+This project enables:
 
-TBD 
+- **Abstract terrain model**: Representing terrains as 2D height maps, with well-defined modification primitives.  
+- **Planning algorithms**: Implementations for centralized, single-robot, and distributed multi-robot planning.  
+- **Evaluation metrics**: Error to target terrain, number of actions, fault tolerance, and scalability.  
+- **Demonstration scripts**: Reproducible experiments showing terrain merging, mound relocation, and random tasks.  
+- **Visualization tools**: Plots and animations of terrain evolution during agent operation.
 
-## Roadmap
+---
 
-- \[x\] TBD
-- \[ \] TBD
+## 📂 Repository Structure
 
-## Citation
+```
+.
+├── demo_merge_mounds.py     # demo: merge multiple mounds
+├── demo_move_mound.py       # demo: relocate a mound
+├── demo_random_task.py      # demo: random terrain task
+├── src/                     # core modules (terrain, agents, strategies, metrics)
+├── data/                    # example terrain data and parameters
+├── image/                   # illustrative figures
+├── video/                   # demo animations
+├── LICENSE
+└── README.md
+```
 
-If you find our work helpful, please cite:
+---
+
+## ⚙️ Requirements
+
+- Python 3.8+  
+- `numpy`, `matplotlib`  
+- (Optional) `scipy`, `tqdm`, or other helper libraries depending on experiment scripts  
+
+To install dependencies:  
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Running Experiments
+
+Run one of the demo scripts:
+
+```bash
+python demo_merge_mounds.py
+python demo_move_mound.py
+python demo_random_task.py
+```
+
+Modify parameters within each demo script to change terrain size, number of agents, or target configuration.  
+To build your own experiment, use modules in `src/`:
+
+```python
+from src.terrain import Terrain
+from src.agent import Agent
+from src.strategy import DistributedPlanner
+
+terrain = Terrain(initial_map)
+agents = [Agent(...) for _ in range(N)]
+planner = DistributedPlanner(...)
+
+for t in range(T):
+    actions = planner.decide(terrain, agents)
+    terrain.apply(actions)
+    terrain.render()
+```
+
+---
+
+## 📊 Evaluation
+
+Our simulation framework supports the following analyses:
+
+- **Error reduction curves** (distance to target terrain over time)  
+- **Robustness to failures** (agent dropout, stochastic actions)  
+- **Scalability** (increasing swarm size vs efficiency)  
+- **Comparison across planning approaches**  
+
+Researchers can reproduce plots from the paper or extend them with new strategies.
+
+---
+
+## 📚 Citation
+
+If you use this codebase in your research, please cite:
 
 ```bibtex
 @inproceedings{chen_2d_2024,
@@ -65,10 +146,24 @@ If you find our work helpful, please cite:
 }
 ```
 
-## License
+---
 
-[MIT licensed](LICENSE).
+## 🧭 Roadmap
 
-## Acknowledgements
+- Extend to 3D terrain modification  
+- Incorporate physical robot experiments  
+- Explore reinforcement learning and adaptive distributed policies  
+- Benchmark against additional planning baselines  
 
-- TBD
+---
+
+## 📄 License
+
+This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgements
+
+This project is developed at the **Collective Embodied Intelligence Lab, Cornell University**.  
+We thank our collaborators and funding sources for
